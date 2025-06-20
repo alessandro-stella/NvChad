@@ -22,7 +22,12 @@ return {
 
   {
     "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -72,6 +77,30 @@ return {
   {
     "wakatime/vim-wakatime",
     lazy = false,
+  },
+
+  -- Plugins for CSS/Tailwind
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = { { "roobert/tailwindcss-colorizer-cmp.nvim", config = true } },
+    opts = function(_, opts)
+      opts.formatting = {
+        format = require("tailwindcss-colorizer-cmp").formatter,
+      }
+    end,
+  },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+      },
+    },
   },
 
   { import = "nvchad.blink.lazyspec" },
