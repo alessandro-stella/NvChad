@@ -103,14 +103,25 @@ return {
     },
   },
 
-  { import = "nvchad.blink.lazyspec" },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    event = "BufReadPost",
+    config = function()
+      vim.o.foldlevel = 99
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
 
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+      require("ufo").setup {
+        provider_selector = function()
+          return { "treesitter", "indent" }
+        end,
+      }
+    end,
+  },
+
+  { import = "nvchad.blink.lazyspec" },
 }
