@@ -5,7 +5,6 @@ local servers = {
   "cssls",
   "eslint",
   "html",
-  "jdtls",
   "jsonls",
   "lua_ls",
   "pyright",
