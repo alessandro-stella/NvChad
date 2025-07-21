@@ -123,5 +123,12 @@ return {
     end,
   },
 
+  {
+    "echasnovski/mini.nvim",
+    config = function()
+      require("mini.icons").setup()
+    end,
+  },
+
   { import = "nvchad.blink.lazyspec" },
 }
