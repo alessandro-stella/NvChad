@@ -79,6 +79,8 @@ return {
     lazy = false,
   },
 
+  { "nvim-java/nvim-java" },
+
   -- Plugins for CSS/Tailwind
   {
     "roobert/tailwindcss-colorizer-cmp.nvim",
