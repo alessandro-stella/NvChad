@@ -79,7 +79,6 @@ return {
     lazy = false,
   },
 
-  -- Plugins for CSS/Tailwind
   {
     "roobert/tailwindcss-colorizer-cmp.nvim",
   },
