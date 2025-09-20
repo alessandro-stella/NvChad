@@ -122,6 +122,8 @@ return {
     end,
   },
 
+  { "mfussenegger/nvim-jdtls" },
+
   {
     "echasnovski/mini.nvim",
     config = function()
