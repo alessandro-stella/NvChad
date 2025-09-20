@@ -6,7 +6,7 @@ function M:setup()
   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
   -- Base workspace directory
-  local workspace_base = vim.fn.expand "~/.workspace_java/"
+  local workspace_base = vim.fn.expand "~/.workspace-java/"
   if vim.loop.fs_stat(workspace_base) == nil then
     vim.loop.fs_mkdir(workspace_base, 448) -- 0o700
   end
