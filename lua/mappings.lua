@@ -34,9 +34,17 @@ function GenerateJavaGetterSetter()
   table.insert(block, "    this." .. name .. " = " .. name .. ";")
   table.insert(block, "}")
 
-  -- Insert below current line
-  local row = vim.api.nvim_win_get_cursor(0)[1]
-  vim.api.nvim_buf_set_lines(0, row, row, false, block)
+  local last_line = vim.api.nvim_buf_line_count(0)
+  local insert_row = last_line
+  for i = last_line, 1, -1 do
+    local l = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
+    if l:match "^%s*}%s*$" then
+      insert_row = i - 1
+      break
+    end
+  end
+
+  vim.api.nvim_buf_set_lines(0, insert_row, insert_row, false, block)
   print("Getter and setter generated for: " .. name)
 end
 
