@@ -139,12 +139,12 @@ return {
   {
     "saghen/blink.cmp",
     opts = function(_, opts)
-      local ft = vim.bo.filetype
-      local name = vim.fn.expand "%:e"
-
-      -- opts.enabled deve essere una funzione che ritorna true/false
       opts.enabled = function()
-        if ft == "markdown" or ft == "text" or name == "pl" then
+        local ft = vim.bo.filetype
+        local ext = vim.fn.expand "%:e"
+
+        if ft == "markdown" or ft == "text" or ext == "pl" or ext == "txt" then
+          vim.notify "Autocompletion disabled"
           return false
         end
         return true
