@@ -85,6 +85,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
+    lazy = false,
     dependencies = { { "roobert/tailwindcss-colorizer-cmp.nvim", config = true } },
     opts = function(_, opts)
       opts.formatting = {
@@ -92,6 +93,9 @@ return {
       }
     end,
   },
+
+  -- Disable useless snippets
+  { "rafamadriz/friendly-snippets", enabled = false },
 
   {
     "NvChad/nvim-colorizer.lua",
@@ -132,4 +136,19 @@ return {
   },
 
   { import = "nvchad.blink.lazyspec" },
+  {
+    "saghen/blink.cmp",
+    opts = function(_, opts)
+      local ft = vim.bo.filetype
+      local name = vim.fn.expand "%:e"
+
+      -- opts.enabled deve essere una funzione che ritorna true/false
+      opts.enabled = function()
+        if ft == "markdown" or ft == "text" or name == "pl" then
+          return false
+        end
+        return true
+      end
+    end,
+  },
 }
