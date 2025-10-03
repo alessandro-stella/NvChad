@@ -5,7 +5,6 @@ local servers = {
   "css-lsp",
   "eslint-lsp",
   "html-lsp",
-  "jdtls",
   "json-lsp",
   "lua-language-server",
   "pyright",
