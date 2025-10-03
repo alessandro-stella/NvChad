@@ -16,6 +16,6 @@ vim.api.nvim_create_autocmd("BufDelete", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
   callback = function(_)
-    require("configs.jdtls_setup").setup()
+    require("configs.jdtls_setup"):setup()
   end,
 })
