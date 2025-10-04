@@ -31,5 +31,3 @@ opt.sidescrolloff = 5
 
 -- Show at least 5 rows before and after the cursor
 opt.scrolloff = 5
-
-opt.winborder = "single"
