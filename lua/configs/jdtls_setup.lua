@@ -49,6 +49,7 @@ function M:setup()
       java = {
         project = {
           sourcePaths = { "." }, -- Source all files to current directory
+          referencedLibraries = { vim.fn.getcwd() .. "/lib/*.jar" }, -- Source .jar files inside project folder
         },
       },
     },
