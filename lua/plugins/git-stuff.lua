@@ -1,6 +1,6 @@
 return {
   {
-    "sindretsets/diffview.nvim",
+    "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen", "DiffviewClose" },
     keys = {
       {
