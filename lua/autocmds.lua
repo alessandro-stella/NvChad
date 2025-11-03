@@ -19,3 +19,14 @@ vim.api.nvim_create_autocmd("FileType", {
     require("configs.jdtls_setup"):setup()
   end,
 })
+
+-- Change tab from spaces to actual tab for text files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "text", "conf", "" },
+  callback = function()
+    vim.opt.expandtab = false
+    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 4
+    vim.opt.softtabstop = 0
+  end,
+})
