@@ -2,10 +2,10 @@ require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
   "clangd",
-  "css-lsp",
-  "eslint-lsp",
-  "html-lsp",
-  "json-lsp",
+  "cssls",
+  "eslintls",
+  "htmlls",
+  "jsonls",
   "lua-language-server",
   "pyright",
   "selene",
