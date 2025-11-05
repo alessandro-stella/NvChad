@@ -3,6 +3,7 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 
 -- Generate getter and setter for private field of java class
 function GenerateJavaGetterSetter()
