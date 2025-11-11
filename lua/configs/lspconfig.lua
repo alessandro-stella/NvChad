@@ -11,7 +11,9 @@ local servers = {
   "selene",
   "tailwindcss-language-server",
   "vtsls",
+  "prismals",
   "yaml-language-server",
+  "solidity_ls",
 }
 
 vim.lsp.enable(servers)
