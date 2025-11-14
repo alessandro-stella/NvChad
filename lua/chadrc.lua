@@ -26,7 +26,7 @@ local border_color = get_hypr_border_color()
 local normal_bg = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true).background)
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "onedark",
 
   hl_add = {
     St_permissions_icon = {
