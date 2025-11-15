@@ -47,6 +47,16 @@ M.base46 = {
 }
 
 M.ui = {
+  border = {
+    "╭",
+    "╮",
+    "╰",
+    "╯",
+    "─",
+    "─",
+    "│",
+    "│",
+  },
   statusline = {
     theme = "default",
     order = {
