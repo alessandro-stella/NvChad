@@ -13,7 +13,7 @@ local servers = {
   "vtsls",
   "prismals",
   "yaml-language-server",
-  "solidity_ls",
+  "solang",
 }
 
 vim.lsp.enable(servers)
