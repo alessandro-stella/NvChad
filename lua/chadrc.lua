@@ -1,3 +1,5 @@
+--- Default configs: https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+
 ---@type ChadrcConfig
 local M = {}
 
@@ -23,7 +25,6 @@ end
 
 local border_color = get_hypr_border_color()
   or string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true).background)
-local normal_bg = string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true).background)
 
 M.base46 = {
   theme = "onedark",
@@ -42,21 +43,24 @@ M.base46 = {
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
-    FloatBorder = { fg = border_color, bg = normal_bg },
+    FloatBorder = { fg = border_color, bg = "none" },
+
+    -- Custom telescope colors
+    TelescopePromptTitle = { fg = border_color, bg = "none" },
+    TelescopePromptPrefix = { fg = border_color, bg = "none" },
+    TelescopeResultsTitle = { fg = border_color, bg = "none" },
+    TelescopePreviewTitle = { fg = border_color, bg = "none" },
+
+    TelescopeBorder = { fg = border_color, bg = "none" },
+    TelescopePromptBorder = { fg = border_color, bg = "none" },
+    TelescopeResultsBorder = { fg = border_color, bg = "none" },
+    TelescopePreviewBorder = { fg = border_color, bg = "none" },
   },
 }
 
 M.ui = {
-  border = {
-    "╭",
-    "╮",
-    "╰",
-    "╯",
-    "─",
-    "─",
-    "│",
-    "│",
-  },
+  border_style = "rounded",
+  telescope = { style = "bordered" },
   statusline = {
     theme = "default",
     order = {
