@@ -1,30 +1,9 @@
+local border_color = "#F7DCB1"
+
 --- Default configs: https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 
 ---@type ChadrcConfig
 local M = {}
-
-local function get_hypr_border_color()
-  local path = os.getenv "HOME" .. "/.config/hypr/dynamic-border.conf"
-  local file = io.open(path, "r")
-  if not file then
-    return nil
-  end
-
-  local color
-  for line in file:lines() do
-    local match = line:match "rgba%((%x%x%x%x%x%x)"
-    if match then
-      color = "#" .. match
-      break
-    end
-  end
-
-  file:close()
-  return color
-end
-
-local border_color = get_hypr_border_color()
-  or string.format("#%06x", vim.api.nvim_get_hl_by_name("Normal", true).background)
 
 M.base46 = {
   theme = "onedark",
@@ -43,18 +22,14 @@ M.base46 = {
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
-    FloatBorder = { fg = border_color, bg = "none" },
+    FloatBorder = { fg = border_color, bg = "NONE" },
 
-    -- Custom telescope colors
-    TelescopePromptTitle = { fg = border_color, bg = "none" },
-    TelescopePromptPrefix = { fg = border_color, bg = "none" },
-    TelescopeResultsTitle = { fg = border_color, bg = "none" },
-    TelescopePreviewTitle = { fg = border_color, bg = "none" },
-
-    TelescopeBorder = { fg = border_color, bg = "none" },
-    TelescopePromptBorder = { fg = border_color, bg = "none" },
-    TelescopeResultsBorder = { fg = border_color, bg = "none" },
-    TelescopePreviewBorder = { fg = border_color, bg = "none" },
+    TelescopeBorder = { fg = border_color, bg = "NONE" },
+    TelescopePromptBorder = { fg = border_color, bg = "NONE" },
+    TelescopePromptTitle = { fg = border_color, bg = "NONE" },
+    TelescopePromptPrefix = { fg = border_color, bg = "NONE" },
+    TelescopePreviewTitle = { fg = border_color, bg = "NONE" },
+    TelescopeResultsTitle = { fg = border_color, bg = "NONE" },
   },
 }
 
