@@ -11,10 +11,10 @@ M.base46 = {
   hl_add = {
     St_permissions_icon = {
       fg = "#1f1f28",
-      bg = "#ff9e3b",
+      bg = "#FFAD5C",
     },
     St_permissions_sep = {
-      fg = "#ff9e3b",
+      fg = "#FFAD5C",
       bg = "#33333c",
     },
   },
