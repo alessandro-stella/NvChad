@@ -8,14 +8,12 @@ return {
   config = function()
     require("markview").setup {
       latex = {
-        enable = true, -- Abilita il rendering generale di LaTeX
+        enable = true,
         inline = {
-          enable = true, -- Abilita la matematica inline ($...$)
+          enable = true,
         },
         block = {
-          enable = true, -- Abilita i blocchi matematici ($$...$$)
-          -- Puoi personalizzare l'aspetto del blocco se vuoi (opzionale)
-          -- text = { "  LaTeX ", "Special" },
+          enable = true,
         },
       },
     }
