@@ -1,5 +1,3 @@
-local border_color = "#F7DCB1"
-
 --- Default configs: https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 
 ---@type ChadrcConfig
@@ -22,14 +20,6 @@ M.base46 = {
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
-    FloatBorder = { fg = border_color, bg = "NONE" },
-
-    TelescopeBorder = { fg = border_color, bg = "NONE" },
-    TelescopePromptBorder = { fg = border_color, bg = "NONE" },
-    TelescopePromptTitle = { fg = border_color, bg = "NONE" },
-    TelescopePromptPrefix = { fg = border_color, bg = "NONE" },
-    TelescopePreviewTitle = { fg = border_color, bg = "NONE" },
-    TelescopeResultsTitle = { fg = border_color, bg = "NONE" },
   },
 }
 
