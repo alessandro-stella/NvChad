@@ -23,12 +23,6 @@ require("lazy").setup({
   },
 
   { import = "plugins" },
-
-  -- Custom plugins
-  {
-    require("custom.floaterminal").setup { height = vim.o.lines - 4, width_ratio = 0.9 },
-    require("custom.floating-todo").setup { target_file = "~/todo.md" },
-  },
 }, lazy_config)
 
 -- Load theme

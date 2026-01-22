@@ -5,6 +5,7 @@ local M = {}
 
 M.base46 = {
   theme = "onedark",
+  transparency = true,
 
   hl_add = {
     St_permissions_icon = {

@@ -8,10 +8,6 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 -- Easy exit from terminal mode
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
--- Custom keymap for floating ToDo
-map("n", "<leader>td", ":Td<CR>", { desc = "Open ToDo", silent = true })
-map("n", "<leader>tf", ":Floaterminal<CR>", { desc = "Open Floating Terminal", silent = true })
-
 -- Generate getter and setter for private field of java class
 function GenerateJavaGetterSetter()
   local filename = vim.api.nvim_buf_get_name(0)
